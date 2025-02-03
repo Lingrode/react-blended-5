@@ -7,6 +7,7 @@ import Heading from '../components/Heading/Heading';
 
 import { getBaseCurrency } from '../redux/currency/operations';
 import { setDefaultCurrency } from '../redux/currency/slice';
+import ExchangeForm from '../components/ExchangeForm/ExchangeForm';
 
 const Home = () => {
   const isError = false;
@@ -36,6 +37,7 @@ const Home = () => {
             title="Something went wrong...😐 Check the data validity and try again!"
           />
         )}
+        <ExchangeForm />
       </Container>
     </Section>
   );

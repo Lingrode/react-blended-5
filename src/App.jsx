@@ -1,14 +1,18 @@
 import { Route, Routes, Navigate } from 'react-router-dom';
+
 import Home from './pages/Home';
 import Rates from './pages/Rates';
 import Heading from './components/Heading/Heading';
+import Header from './components/Header/Header';
 
 export const App = () => {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/rates" element={<Rates />} />
-      <Route path="*" element={<Navigate to="/" />} />
+      <Route path="/" element={<Header />}>
+        <Route index element={<Home />} />
+        <Route path="rates" element={<Rates />} />
+        <Route path="*" element={<Navigate to="/" />} />
+      </Route>
     </Routes>
     // <Heading title="Just do it!" />
   );
