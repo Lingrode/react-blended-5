@@ -8,7 +8,10 @@ const initialState = {
   isError: null,
 };
 
-const handlePending = state => (state.isLoading = true);
+const handlePending = state => {
+  state.isLoading = true;
+};
+
 const handleRejected = (state, action) => {
   state.isLoading = false;
   state.isError = action.payload;
