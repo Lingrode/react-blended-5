@@ -1,18 +1,22 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { getBaseCurrency, getExchange } from './operations';
+import { CurrencyState } from './types';
 
-const initialState = {
+const initialState: CurrencyState = {
   baseCurrency: '',
   exchangeInfo: null,
   isLoading: false,
   isError: null,
 };
 
-const handlePending = state => {
+const handlePending = (state: Pick<CurrencyState, 'isLoading'>) => {
   state.isLoading = true;
 };
 
-const handleRejected = (state, action) => {
+const handleRejected = (
+  state: Pick<CurrencyState, 'isLoading' | 'isError'>,
+  action: PayloadAction<string | undefined>,
+) => {
   state.isLoading = false;
   state.isError = action.payload;
 };

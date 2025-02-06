@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 
 import Section from '../components/Section/Section';
 import Container from '../components/Container/Container';
@@ -8,6 +7,7 @@ import ExchangeForm from '../components/ExchangeForm/ExchangeForm';
 import ExchangeInfo from '../components/ExchangeInfo/ExchangeInfo';
 import Loader from '../components/Loader/Loader';
 
+import { useAppDispatch, useAppSelector } from '../hooks';
 import { getBaseCurrency } from '../redux/currency/operations';
 import { setDefaultCurrency } from '../redux/currency/slice';
 import {
@@ -17,10 +17,10 @@ import {
 } from '../redux/currency/selectors';
 
 const Home = () => {
-  const dispatch = useDispatch();
-  const isError = useSelector(selectIsError);
-  const isLoading = useSelector(selectIsLoading);
-  const exchangeInfo = useSelector(selectExchangeInfo);
+  const dispatch = useAppDispatch();
+  const isError = useAppSelector(selectIsError);
+  const isLoading = useAppSelector(selectIsLoading);
+  const exchangeInfo = useAppSelector(selectExchangeInfo);
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
