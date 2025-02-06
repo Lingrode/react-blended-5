@@ -10,7 +10,7 @@ import store, { persistor } from './redux/store.js';
 import 'modern-normalize/modern-normalize.css';
 import './index.css';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <BrowserRouter>
       <Provider store={store}>

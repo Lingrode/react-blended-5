@@ -1,6 +1,11 @@
+import React from 'react';
 import styled from './Container.module.css';
 
-const Container = ({ children }) => {
+type Props = {
+  children: React.ReactNode;
+};
+
+const Container = ({ children }: Props) => {
   return <div className={styled.container}>{children}</div>;
 };
 

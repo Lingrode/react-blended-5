@@ -1,7 +1,16 @@
-import styles from './Heading.module.css';
 import clsx from 'clsx';
 
-const Heading = ({ title, top, bottom, error, info, tad: Tag = 'h2' }) => {
+import type { Props } from './Heading.types';
+import styles from './Heading.module.css';
+
+const Heading = ({
+  title,
+  top,
+  bottom,
+  error,
+  info,
+  tag: Tag = 'h2',
+}: Props) => {
   return (
     <Tag
       className={clsx(styles.title, {

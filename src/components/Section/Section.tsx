@@ -1,6 +1,10 @@
 import style from './Section.module.css';
 
-const Section = ({ children }) => {
+type Props = {
+  children: React.ReactNode;
+};
+
+const Section = ({ children }: Props) => {
   return <section className={style.section}>{children}</section>;
 };
 
