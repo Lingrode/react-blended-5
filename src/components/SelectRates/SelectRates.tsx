@@ -25,7 +25,7 @@ const SelectRates = ({ baseCurrency }: Props) => {
 
   return (
     <div className={styles.box}>
-      <p className={styles.text}>Your base currency: {baseCurrency}</p>
+      <p className={styles.text}>Your base currency: {baseCurrency}</p>{" "}
       <Select
         className={styles.select}
         classNamePrefix="react-select"
