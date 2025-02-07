@@ -1,6 +1,7 @@
 import axios from 'axios';
 import {
   ExchangeCredentials,
+  ExchangeRates,
   ExchangeResponse,
   ExchangeResult,
 } from '../redux/currency/types';
@@ -22,7 +23,9 @@ export const exchangeCurrency = async (
   return { ...query, rate: info.rate, result };
 };
 
-export const latestRates = async (baseCurrency: string) => {
+export const latestRates = async (
+  baseCurrency: string,
+): Promise<ExchangeRates> => {
   const { data } = await instance.get(`/latest?symbols&base=${baseCurrency}`);
-  return Object.entries(data.rates);
+  return data.rates;
 };

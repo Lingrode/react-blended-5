@@ -3,12 +3,8 @@ import GridItem from '../GridItem/GridItem';
 
 import styles from './RatesList.module.css';
 
-type ExchangeRates = {
-  [currencyCode: string]: number;
-};
-
 type Props = {
-  rates: ExchangeRates;
+  rates: { key: string; value: string }[];
 };
 
 const RatesList = ({ rates }: Props) => {
