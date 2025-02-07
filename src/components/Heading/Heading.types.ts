@@ -1,5 +1,7 @@
+import { ReactElement } from 'react';
+
 export type Props = {
-  title: string;
+  title: string | ReactElement;
   top?: boolean;
   bottom?: boolean;
   error?: boolean;

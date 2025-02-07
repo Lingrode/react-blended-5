@@ -3,7 +3,15 @@ import GridItem from '../GridItem/GridItem';
 
 import styles from './RatesList.module.css';
 
-const RatesList = ({ rates }) => {
+type ExchangeRates = {
+  [currencyCode: string]: number;
+};
+
+type Props = {
+  rates: ExchangeRates;
+};
+
+const RatesList = ({ rates }: Props) => {
   return (
     <Grid>
       {rates.map(({ key, value }) => (

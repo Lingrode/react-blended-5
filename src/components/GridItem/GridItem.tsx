@@ -1,6 +1,11 @@
+import { ReactNode } from 'react';
 import style from './GridItem.module.css';
 
-const GridItem = ({ children }) => {
+type Props = {
+  children: ReactNode;
+};
+
+const GridItem = ({ children }: Props) => {
   return <li className={style.item}>{children}</li>;
 };
 

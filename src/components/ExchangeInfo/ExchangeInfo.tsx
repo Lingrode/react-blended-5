@@ -1,6 +1,7 @@
+import { ExchangeInfoType } from '../../redux/currency/types';
 import styles from './ExchangeInfo.module.css';
 
-const ExchangeInfo = ({ amount, from, to, rate, result }) => {
+const ExchangeInfo = ({ amount, from, to, rate, result }: ExchangeInfoType) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.box}>

@@ -8,7 +8,8 @@ import { selectBaseCurrency } from '../../redux/currency/selectors';
 import styles from './Header.module.css';
 
 const Header = () => {
-  const addActive = ({ isActive }) => (isActive ? styles.active : styles.link);
+  const addActive = ({ isActive }: { isActive: boolean }) =>
+    isActive ? styles.active : styles.link;
   const baseCurrency = useSelector(selectBaseCurrency);
 
   return (

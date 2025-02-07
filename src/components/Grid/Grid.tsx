@@ -1,6 +1,11 @@
+import { ReactNode } from 'react';
 import style from './Grid.module.css';
 
-const Grid = ({ children }) => {
+type Props = {
+  children: ReactNode;
+};
+
+const Grid = ({ children }: Props) => {
   return <ul className={style.list}>{children}</ul>;
 };
 
