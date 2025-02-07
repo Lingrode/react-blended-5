@@ -14,8 +14,11 @@ export const selectRates = (state: RootState) => state.currency.rates;
 export const selectFilteredRates = createSelector(
   [selectRates, selectBaseCurrency],
   (rates, baseCurrency) => {
-    return Object.entries(rates)
+    return rates
       .filter(([key]) => key !== baseCurrency)
-      .map(([key, value]) => ({ key, value: (1 / Number(value)).toFixed(2) }));
+      .map(([key, value]) => ({
+        key,
+        value: (1 / Number(value)).toFixed(2),
+      }));
   },
 );

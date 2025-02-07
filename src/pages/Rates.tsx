@@ -1,15 +1,27 @@
 import { Wave } from 'react-animated-text';
+import { useEffect } from 'react';
 
 import Section from '../components/Section/Section';
 import Container from '../components/Container/Container';
 import Heading from '../components/Heading/Heading';
-import { useAppSelector } from '../hooks';
-import { selectFilteredRates } from '../redux/currency/selectors';
 import RatesList from '../components/RatesList/RatesList';
+
+import { useAppDispatch, useAppSelector } from '../hooks';
+import {
+  selectBaseCurrency,
+  selectFilteredRates,
+} from '../redux/currency/selectors';
+import { getLatestRates } from '../redux/currency/operations';
 
 const Rates = () => {
   const isError = false;
   const filteredRates = useAppSelector(selectFilteredRates);
+  const baseCurrency = useAppSelector(selectBaseCurrency);
+  const dispatch = useAppDispatch();
+
+  // useEffect(() => {
+  //   dispatch(getLatestRates(baseCurrency));
+  // }, [dispatch]);
 
   return (
     <Section>

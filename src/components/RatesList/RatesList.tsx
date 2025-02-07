@@ -13,7 +13,7 @@ const RatesList = ({ rates }: Props) => {
       {rates.map(({ key, value }) => (
         <GridItem key={key}>
           <p className={styles.text}>
-            1 {key} = {value}
+            {key} = {value}
           </p>
         </GridItem>
       ))}
